@@ -1,7 +1,8 @@
   
 class User < ActiveRecord::Base
-  has_many :meals #or posts?
   has_secure_password 
+  has_many :meals 
+
   validates_presence_of :email, :username, :password
 
   
