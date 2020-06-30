@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     get '/signup' do
-        if Helpers.is_logged_in?(session)
+        if logged_in?(session)
          redirect to '/meals' #shows all meals for user 
        end
    
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     get '/login' do 
         #erb :"users/login"
-        if Helpers.is_logged_in?(session)
+        if logged_in?(session)
             redirect "/meals"
         else
             erb :"users/login"
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     end 
 
     get '/logout' do 
-        if Helpers.is_logged_in?(session)
+        if logged_in?(session)
             session.clear 
         end 
         erb :index
