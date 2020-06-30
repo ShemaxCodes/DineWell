@@ -1,0 +1,20 @@
+ENV['SINATRA_ENV'] ||= "development"
+require 'rake'
+require 'active_record'
+require 'yaml/store'
+require 'ostruct'
+require 'date'
+ 
+
+require 'bundler/setup'
+Bundler.require(:default, ENV['SINATRA_ENV'])
+
+ActiveRecord::Base.establish_connection(
+  :adapter => "sqlite3",
+  :database => "db/#{ENV['SINATRA_ENV']}.sqlite"
+)
+require 'dotenv'
+Dotenv.load
+
+require './app/controllers/application_controller'
+require_all 'app'
