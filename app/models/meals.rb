@@ -1,3 +1,4 @@
-class Meal < ActiveRecord::Base
+  class Meal < ActiveRecord::Base
     belongs_to :user
+    
   end

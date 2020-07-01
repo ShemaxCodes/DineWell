@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     get '/signup' do
-        if Helpers.is_logged_in?(session)
+        if logged_in?
          redirect to '/meals' #shows all meals for user 
        end
    
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do 
+        #binding.pry
         user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
         if user.save && user.username != "" && user.email != ""
             session[:user_id] = user.id
@@ -20,25 +21,25 @@ class UsersController < ApplicationController
     end 
 
 
-   # get '/login' do 
+    get '/login' do 
         #erb :"users/login"
-        #if Helpers.is_logged_in?(session)
-           # redirect to "/meals"
-        #else
-       #     erb :"users/login"
-       # end 
-   # end 
+        if logged_in?
+           redirect to "/meals"
+        else
+           erb :"users/login"
+        end 
+    end 
 
-    #post '/login' do 
-        #user = User.find_by(username: params[:username])
-        #if user && user.authenticate(password: params[:password])
-           # session[:user_id] = user.id
-          #  redirect to '/meals'
-      #  else  
-           # redirect to '/login'
+    post '/login' do 
+        user = User.find_by(username: params[:username])
+        if user && user.authenticate(password: params[:password])
+            session[:user_id] = user.id
+            redirect to '/meals'
+        else  
+            redirect to '/login'
         
-       # end
-  #  end 
+        end
+    end 
 
    # get '/logout' do 
         #if Helpers.is_logged_in?(session)

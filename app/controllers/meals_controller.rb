@@ -1,9 +1,9 @@
 class MealsController < ApplicationController 
 
 get '/meals' do 
-    if Helpers.is_logged_in?(session)
+    if logged_in?
         @meals = Meal.all 
-        @user = current_user(session)
+        @user = current_user
         erb :"meals/meals"
     else
         redirect '/login'
@@ -11,7 +11,7 @@ get '/meals' do
 end 
 
 get '/meals/new' do 
-    if Helpers.is_logged_in?(session)
+    if logged_in?
         erb :"meals/new_meal"
     else 
      redirect '/login'
@@ -19,7 +19,7 @@ get '/meals/new' do
 end 
 
 post '/meals' do 
-    user = current_user(session)
+    user = current_user
     if params[:title].empty? || params[:ingredients].empty?
         redirect '/meals/new'
     end 
@@ -27,5 +27,7 @@ post '/meals' do
     redirect '/meals'
 
 end 
+
+
 
 end
