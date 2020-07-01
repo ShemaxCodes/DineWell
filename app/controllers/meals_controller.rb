@@ -1,9 +1,9 @@
 class MealsController < ApplicationController 
 
 get '/meals' do 
-    if logged_in?(session)
+    if Helpers.is_logged_in?(session)
         @meals = Meal.all 
-        #@user = current_user(session)
+        @user = current_user(session)
         erb :"meals/meals"
     else
         redirect '/login'
@@ -11,7 +11,7 @@ get '/meals' do
 end 
 
 get '/meals/new' do 
-    if logged_in?(session)
+    if Helpers.is_logged_in?(session)
         erb :"meals/new_meal"
     else 
      redirect '/login'
