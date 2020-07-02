@@ -13,6 +13,7 @@ class UsersController < ApplicationController
         user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
         if user.save && user.username != "" && user.email != ""
             session[:user_id] = user.id
+            #binding.pry
             redirect to "/meals"
         else 
             redirect "/signup"
