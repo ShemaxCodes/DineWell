@@ -1,8 +1,13 @@
-<h1>Welcome, <%= user.current_user %></h1>
+<h1>Welcome, <%= current_user.username %></h1>
 
 <form action="/meals" method="POST">
-<label for="day">Monday:</label>
-  <label>Title:</label><br>
+<h3><label for="day">Tired of the same ol' Meals? Add a new one here.</label></h3>
+<h4>We'll keep up with it for you.</h4>
+  <p><label>Title:</label></p><br>
   <input type="text" name="title" id="title"><br><br>
+  <label for="ingredients">Ingredients:</label><br><br>
+  <textarea name="ingredients" id="ingredients"> </textarea><br>
   <input type="submit" value="submit">
 </form>
+
+<!--unfinished form-->

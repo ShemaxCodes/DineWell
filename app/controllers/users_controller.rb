@@ -42,11 +42,11 @@ class UsersController < ApplicationController
         end
     end 
 
-   # get '/logout' do 
-        #if Helpers.is_logged_in?(session)
-         #   session.clear 
-       # end 
-       # erb :index
-  #  end 
+   get '/logout' do 
+        if logged_in?
+           session.clear 
+       end 
+        erb :index
+     end 
 
 end 

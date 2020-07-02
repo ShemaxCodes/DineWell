@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :sessions_secret, "secret"
+    set :session_secret, "secret"
   end
 
   get "/" do
@@ -17,7 +17,6 @@ class ApplicationController < Sinatra::Base
   helpers do 
    def current_user
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-      binding.pry #stack level too deep error 
     end
 
     def logged_in?

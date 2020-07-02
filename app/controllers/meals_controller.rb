@@ -28,6 +28,9 @@ post '/meals' do
 
 end 
 
+get '/meals/:id' do 
 
+
+end 
 
 end
