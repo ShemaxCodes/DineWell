@@ -29,8 +29,34 @@ post '/meals' do
 end 
 
 get '/meals/:id' do 
+    if logged_in?
+        @meal = Meal.find_by(id: params[:id])
+        erb :'meals/show_meal'
+    else 
+        redirect to '/login'
+    end 
+end 
 
+get '/meals/:id/edit' do 
+   if !logged_in?
+    redirect to '/login'
+   end 
+    @meal = Meal.find_by(id: params[:id]) 
+    if @meal.title != nil || @meal.ingredients != nil 
+    if current_user.id == @meal.user_id
+        erb :"meals/edit_meal"
+    end  
+    end 
+end 
 
+patch '/meals/:id' do 
+    meal = Meal.find_by(id: params[:id])
+    if params[:title].empty? || params[:ingredients].empty?
+        redirect to '/meals/#{params[:id]}/edit'
+    end 
+    meal.update(title: params[:title], ingredients: params[:ingredients])
+    meal.save
+    redirect to '/meals/#{meal.id}'
 end 
 
 end
