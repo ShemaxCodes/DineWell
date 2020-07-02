@@ -23,7 +23,6 @@ class UsersController < ApplicationController
 
 
     get '/login' do 
-        #erb :"users/login"
         if logged_in?
            redirect to "/meals"
         else
@@ -34,8 +33,8 @@ class UsersController < ApplicationController
     post '/login' do 
         user = User.find_by(username: params[:username])
         if user && user.authenticate(password: params[:password])
-            session[:user_id] = user.id
-            redirect to '/meals'
+            session[:user_id] = current_user.id
+            redirect to "/meals"
         else  
             redirect to '/login'
         
