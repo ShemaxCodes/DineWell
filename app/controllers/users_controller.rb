@@ -33,10 +33,10 @@ class UsersController < ApplicationController
     post '/login' do 
         user = User.find_by(username: params[:username])
         if user && user.authenticate(password: params[:password])
-            session[:user_id] = current_user.id
+            session[:user_id] = user.id 
             redirect to "/meals"
         else  
-            redirect to '/login'
+            edirect to '/login'
         
         end
     end 
