@@ -2,8 +2,8 @@ class MealsController < ApplicationController
 
 get '/meals' do 
     if logged_in?
-        @meals = Meal.all 
         @user = current_user
+        @meals = current_user.meals
         erb :"meals/meals"
     else
         redirect '/login'
