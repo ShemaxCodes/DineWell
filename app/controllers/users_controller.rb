@@ -36,9 +36,10 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect to "/meals"
         else  
-            edirect to '/login'
+            redirect to '/login'
         
         end
+        redirect to "/meals"
     end 
 
    get '/logout' do 

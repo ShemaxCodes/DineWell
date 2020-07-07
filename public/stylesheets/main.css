@@ -13,11 +13,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background: url('images/brooke-lark-08bOYnH_r_E-unsplash.jpg');
     color: #333;
-    font-family: Sans-Serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
     line-height: 18px;
   }
+  
+  
 
   .wrapper {
     background: #fff;
@@ -31,11 +34,13 @@
   }
 
   h1 {
+    font-family: 'Archivo', sans-serif;
     font-size: 36px;
     line-height: 54px;
   }
 
   h2 {
+    font-family: 'Archivo', sans-serif;
     border-bottom: 2px solid #ccc;
     font-size: 24px;
     line-height: 36px;
@@ -43,6 +48,7 @@
   }
 
   h3 {
+    font-family: 'Archivo', sans-serif;
     font-size: 18px;
     line-height: 36px;
   }
@@ -77,10 +83,13 @@
   }
 
   footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
 }
 
 @media screen and (max-width: 600px) {
