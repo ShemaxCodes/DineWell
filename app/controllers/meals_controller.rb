@@ -59,4 +59,12 @@ patch '/meals/:id' do
     redirect to '/meals/#{meal.id}'
 end 
 
+
+post '/meals/:id/delete' do 
+    @meal = Meal.find_by(id: params[:id])
+    @meal.destroy
+    redirect to '/meals'
+    
+end 
+
 end

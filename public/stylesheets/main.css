@@ -80,6 +80,8 @@
   position: absolute;
   padding: 14px 16px;
   padding-left: 120px;
+  font-family: 'Oswald', sans-serif;
+  font-size: large;
 }
 
 .nav-link {
@@ -100,6 +102,7 @@
 .navbar-right {
   float: right;
   list-style-type: none;
+  padding-right: 40px;
 }
 
   .container {
