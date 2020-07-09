@@ -1,7 +1,7 @@
 @media screen {
   /* --- Reset Styles --- */
   * {
-    list-style: none;
+    /*list-style: none;*/
     margin: 0;
     padding: 0;
   }
@@ -14,7 +14,7 @@
   body {
     background: url('images/brooke-lark-08bOYnH_r_E-unsplash.jpg');
     color: #333;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Archivo', sans-serif;
     font-weight: 300;
     line-height: 18px;
   }
@@ -58,20 +58,54 @@
 
   
 
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
-  .sidebar ul {
-    font-size: 14px;
-  }
-
   .branding {
     clear: both;
+  }
+
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ededed;
+    
+    /*text-align: center;*/
+  }
+.nav-link {
+  padding: 14px 16px;
+  display: inline-block;
+}
+
+.navbar-header {
+  float: left;
+  position: absolute;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.navbar-right {
+  float: right;
+  list-style-type: none;
+}
+
+  .container {
+    position: fixed;
+    padding: 14px 16px;
+    top: 0;
+    width: 100%;
+    background-color: #ededed;
+    /* /*text-align: center;* */
+
+
   }
 
   footer.branding {
@@ -79,7 +113,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
+    /*background-color: #e9e9e9;*/
     color: white;
     text-align: center;
 }
@@ -91,7 +125,7 @@
     box-shadow: none;
     width: auto;
   }
-
+}
   .content, .sidebar {
     float: none;
     width: 100%;
