@@ -11,13 +11,13 @@
   }
 
   /* --- Welcome Page Styles --- */
-  body {
+  /*body {
     background: url('images/brooke-lark-08bOYnH_r_E-unsplash.jpg');
     color: #333;
     font-family: 'Archivo', sans-serif;
     font-weight: 300;
     line-height: 18px;
-  }
+  }*/
   
   
 
@@ -32,6 +32,7 @@
     width: 85%;
     padding-top: 50px;
     padding-bottom: 50px;
+    border-radius: 10px;
   }
 
   h1 {
@@ -95,7 +96,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -50%);
 }
 
 
@@ -110,11 +111,42 @@
     padding: 14px 16px;
     top: 0;
     width: 100%;
-    background-color: #ededed;
+    background-color: #f8f9fa;
     /* /*text-align: center;* */
 
-
   }
+
+  input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: 'Archivo', sans-serif;
+    font-size: medium;
+  }
+
+  input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  textarea {
+    width: 50%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    font-family: 'Archivo', sans-serif;
+    font-size: medium;
+  }
+
 
   footer.branding {
     position: fixed;

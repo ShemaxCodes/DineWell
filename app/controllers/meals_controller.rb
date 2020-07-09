@@ -52,11 +52,11 @@ end
 patch '/meals/:id' do 
     meal = Meal.find_by(id: params[:id])
     if params[:title].empty? || params[:ingredients].empty?
-        redirect to '/meals/#{params[:id]}/edit'
+        redirect to "/meals/#{params[:id]}/edit"
     end 
     meal.update(title: params[:title], ingredients: params[:ingredients])
     meal.save
-    redirect to '/meals/#{meal.id}'
+    redirect to "/meals/#{meal.id}"
 end 
 
 

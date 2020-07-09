@@ -1,6 +1,6 @@
 
 <%= @meal.title %><br>
-<%= @meal.ingredients %><br>
+<%= @meal.ingredients %><br><br>
 
 <a href="/meals/<%= @meal.id %>/edit"><button type="button">Edit Meal</button></a>
 <form action="/meals/<%= @meal.id %>/delete" method ="POST">
