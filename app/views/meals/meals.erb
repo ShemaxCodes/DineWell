@@ -1,7 +1,7 @@
 <h1>Welcome, <%= current_user.username %></h1><br>
 
 <% @meals.each do |meal| %><br><br>
-<a href="/meals/<%= meal.id %>"><%= meal.title %> </a>
+<a href="/meals/<%= meal.id %>" style="color: black"><%= meal.title %> </a>
 <% end %><br><br>
 
 <a href="/meals/new"><input type="submit" value="New Meal"></a>

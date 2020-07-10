@@ -22,7 +22,8 @@
   
 
   .wrapper {
-    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(10px); /*Fixes Chrome support for backgrop*/
+    backdrop-filter: blur(20px);
     /*-moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);*/
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -74,8 +75,7 @@
     width: 100%;
     margin: 0 auto;
     background-color: #ededed;
-    
-    /*text-align: center;*/
+    z-index: 9999; /*Keeps content from covering up the navbar*/
   }
 
 .navbar-header {
@@ -114,14 +114,13 @@
   font-weight: 300;
 }
 
-  .container {
-    position: fixed;
-    padding: 14px 16px;
-    top: 0;
-    width: 100%;
-    background-color: #f8f9fa;
-
-  }
+.container {
+  position: fixed;
+  padding: 14px 16px;
+  top: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+}
 
   input[type=text] {
     width: 30%;
