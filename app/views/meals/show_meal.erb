@@ -2,8 +2,8 @@
 <%= @meal.title %><br>
 <%= @meal.ingredients %><br><br>
 
-<a href="/meals/<%= @meal.id %>/edit"><button type="button">Edit Meal</button></a>
+<a href="/meals/<%= @meal.id %>/edit"><input type="submit" value="Edit Meal"></a><br><br>
 <form action="/meals/<%= @meal.id %>/delete" method ="POST">
-<input type="submit" value="Delete Meal">
+<input type="submit" value="Delete Meal"><br><br>
 </form>
-<a href="/meals"><button type="button">Back to My Meals</button></a>
+<a href="/meals"><input type="submit" value="Back to My Meals"></a>
