@@ -1,5 +1,5 @@
 
-DineWell
+Dine Well
 
 Welcome to your new gem! This meal prep web application, Dine Well, initially created to keep track or store all of my 'workout' meals in one place. I had a fitness trainer who would send different meals to prep each week. That's a lot of meals in a lot of different places! I got tired of scrolling through pictures and emails to find the meal plans, so Dine Well was born. This application will allow users to create new meals, edit, and delete the ones you no longer want. Below, you will find a link demonstrating how to interact with Dine Well in the browser. 
 
