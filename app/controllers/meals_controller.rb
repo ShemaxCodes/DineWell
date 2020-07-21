@@ -43,10 +43,13 @@ get '/meals/:id/edit' do
    end 
     @meal = Meal.find_by(id: params[:id]) 
     if @meal.title != nil || @meal.ingredients != nil 
-    if current_user.id == @meal.user_id
-        erb :"meals/edit_meal"
-    end  
+        if current_user.id == @meal.user_id
+            erb :"meals/edit_meal"
+        else 
+            redirect to '/meals'
+        end  
     end 
+     
 end 
 
 patch '/meals/:id' do 

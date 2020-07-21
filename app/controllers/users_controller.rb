@@ -17,8 +17,7 @@ class UsersController < ApplicationController
             redirect to "/meals"
         else 
             redirect "/signup"
-        end 
-            redirect to "/meals"
+        end  
     end 
 
 
