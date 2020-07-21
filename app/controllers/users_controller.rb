@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
     get '/signup' do
         if logged_in?
-         redirect to '/meals' #shows all meals for user 
+         redirect to '/meals' 
        end
    
        erb :"/users/signup"
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
             redirect to '/login'
         
         end
-        #redirect to "/meals"
+        
     end 
 
    get '/logout' do 
